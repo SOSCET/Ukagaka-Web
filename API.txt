@@ -1,0 +1,116 @@
+偽春菜
+來寫企劃書吧 =v=~
+沒理想R 有請各位講一下想做什麼
+目的
+當然是萌萌的妹子小助手啊（？），紓解孤單寂寞的肥宅心理以及中二症頭。
+
+執行平台（商討中）
+阿就 Web 啊 （翻桌
+ 爲什麼只能有 Web 版本？
+桌面端呢？（翻桌
+系統提示：你已掉入坑，你負責的部份是桌面端
+.............
+
+屬性設定
+名字：
+個性：呆萌
+
+功能
+可以對話
+聊天機器人RRRR
+要會動
+我想讓她在下面跑來跑去
+要會跌倒
+要會舉木牌
+臉要呆
+網站導覽
+Web to Slack Message
+後端 3人完勝
+JS +1 +1 +1
+ 如果可以，排一下要先做什麼功能
+我們還在列功能清單
+臉要呆不算是功能吧...
+是
+
+有現成的不要重複造輪子
+有現成的不要重複造輪子
+有現成的不要重複造輪子
+http://ssp.shillest.net/
+http://ssp.shillest.net/ukadoc/manual/manual_directory.html
+web
+
+API
+Front end
+\Ukagaka
+\Ukagaka\Communication
+\Ukagaka\Communication\send();
+\Ukagaka\Action
+\Ukagaka\Action\Constructor();
+\Ukagaka\Action\goLeft();
+\Ukagaka\Action\goRight();
+\Ukagaka\Action\falling();
+\Ukagaka\Menu
+\Ukagaka\Menu\toggle();
+\Ukagaka\Menu\jumpTo();
+\Ukagaka\Menu\goDown();
+\Ukagaka\Menu\goUp();
+\Ukagaka\init();
+\Ukagaka\toggle();
+\Chat
+\Chat\toggle();
+\Chat\Communication
+\Chat\Communication\sendMessage();
+\Chat\Communication\getMessage();
+\Graphic
+\Graphic\setImage();
+\Graphic\doEffect();
+=0 自左下起，<0 從反向邊界扣(如右方)
+Back end
+
+front end
+class Ukagaka {
+void Init();
+// Graphics part:
+struct Position { x, y }
+// 左下角為 (0, 0)
+// 小於0即由另一邊界計算起
+struct Color{}
+struct Image{}
+struct Scene { Array<struct{Image img, Position pos, Color trans}> }
+// index 越小越接近 background，即越早畫
+class Character {
+int id
+bool setVisible( bool Visible )
+bool getVisible()
+void setScene( Scene scene )
+void doAnimation( Array<Scene>, int interval(ms) )
+void Dispose()
+function pointer OnLeftClick, OnRightClick, OnDoubleClick
+}
+class Balloon {
+Position boxPos, arrowPos
+Color bgcolor
+String text
+void Dispose();
+function pointer OnLeftClick, OnRightClick, OnDoubleClick
+}
+void inputMsg( String msg )
+function pointer MsgHandler
+void say( int character_id, String msg )
+// Communication Part:
+struct Message { int sender_id, int receiver_id, Time time, String msg }
+// id為 0 即 to lobby
+void connect();
+void disconnect();
+bool isGood();
+void sendMsg( int target_id, String msg )
+Array< Message > recvMsg()
+// ??Part
+Generate or Query Character 的 Scene 或 台詞
+Timing為 random time interval or server callback?
+}
+調戲大倫成為layout王
+飛燕是個slackbot控
+飛燕不是slackbot控
+世錦賽輸了QAQQQQQQ
+換大倫上去打
